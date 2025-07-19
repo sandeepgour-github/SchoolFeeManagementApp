@@ -33,12 +33,12 @@ SchoolFeeManagement/
 │   │               ├── search.js
 │   │               ├── pay.js
 │   │               └── history.js
-├── receipts/                  # Auto-generated PDF receipts
-├── target/                    # Compiled files (after build)
-├── pom.xml                    # Maven configuration
-├── mvnw, mvnw.cmd             # Maven wrapper files
-├── README.md                  # Project instructions
-└── HELP.md                    # (Optional) User Guide
+├── receipts/                  
+├── target/                    
+├── pom.xml                   
+├── mvnw, mvnw.cmd            
+├── README.md             
+└── HELP.md        
 
 
 ```
