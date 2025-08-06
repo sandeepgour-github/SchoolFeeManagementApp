@@ -26,7 +26,7 @@ public class SecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http)throws Exception{
 		
 		http.authorizeHttpRequests(request->
-		request.requestMatchers("/auth/**","admin-register.html","admin-login.html").permitAll()
+		request.requestMatchers("/auth/**","/admin-register.html","/admin-login.html").permitAll()
 		.anyRequest().authenticated())
 		.exceptionHandling(ex->ex.authenticationEntryPoint(jwtAuthEntryPoint))
 		.sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
