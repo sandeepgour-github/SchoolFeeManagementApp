@@ -40,6 +40,8 @@ public class Student {
 	    @Min(value = 1000, message = "Total fee must be at least 1000")
 	    private double totalFee;
 	    
+	    private String status="ACTIVE";
+	    
 		public Long getId() {
 			return id;
 		}
@@ -88,5 +90,10 @@ public class Student {
 		public void setTotalFee(double totalFee) {
 			this.totalFee = totalFee;
 		}
-	    
+		public String getStatus() {
+			return status;
+		}
+		public void setStatus(String status) {
+			this.status = status;
+		}
 }

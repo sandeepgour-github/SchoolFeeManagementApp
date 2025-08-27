@@ -1,11 +1,13 @@
 package in.sandeep.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,5 +52,11 @@ public class StudentController {
 	@GetMapping("/search")
 	public ResponseEntity<List<Student>> findAllstudnts() {
 		return ResponseEntity.ok(sService.findAllStudents());
+	}
+	
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<Map<String,String>> deleteStudent(@PathVariable String id){
+		sService.deleteStudent(id);
+		return ResponseEntity.ok(Map.of("message","Student deleted successfully"));
 	}
 }
