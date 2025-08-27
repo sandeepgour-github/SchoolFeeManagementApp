@@ -18,28 +18,13 @@ SchoolFeeManagement/
 │   │   │           └── repository/
 │   │   └── resources/
 │   │       ├── application.properties
-│   │       └── static/
-│   │           ├── index.html
-│   │           ├── student-register.html
-│   │           ├── student-search.html
-│   │           ├── fee-pay.html
-│   │           ├── fee-history.html
-│   │           ├── student-list.html
-│   │           ├── admin-dashboard.html
-│   │           ├── css/
-│   │           │   └── style.css
-│   │           └── js/
-│   │               ├── register.js
-│   │               ├── search.js
-│   │               ├── pay.js
-│   │               └── history.js
+│   │       └── static/  
 ├── receipts/                  
 ├── target/                    
 ├── pom.xml                   
 ├── mvnw, mvnw.cmd            
 ├── README.md             
-└── HELP.md        
-
+└── HELP.md
 
 ```
 
