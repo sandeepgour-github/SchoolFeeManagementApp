@@ -35,7 +35,7 @@ public class SecurityConfig {
 		http.csrf(csrf->csrf.disable());
 		return http.build();
 	}
-
+	
 	@Bean
     public CorsConfigurationSource corsConfigurationSource() {
 
