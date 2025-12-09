@@ -28,13 +28,35 @@ public class SecurityConfig {
 		http.authorizeHttpRequests(request->
 		request.requestMatchers("/auth/**","/admin-register.html","/admin-login.html").permitAll()
 		.anyRequest().authenticated())
+		.cors(cors -> cors.configurationSource(corsConfigurationSource()))
 		.exceptionHandling(ex->ex.authenticationEntryPoint(jwtAuthEntryPoint))
 		.sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 		http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 		http.csrf(csrf->csrf.disable());
-		http.cors();
 		return http.build();
 	}
+
+	@Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+
+        CorsConfiguration config = new CorsConfiguration();
+
+        config.setAllowedOrigins(Arrays.asList(
+                "https://schoo-fee-management-frontend.netlify.app",
+                "http://localhost:5500",
+                "http://localhost:3000"
+        ));
+
+        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        config.setAllowedHeaders(Arrays.asList("*"));
+        config.setExposedHeaders(Arrays.asList("*"));
+        config.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", config);
+
+        return source;
+    }
 	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
